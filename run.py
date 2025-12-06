@@ -294,7 +294,7 @@ def get_file(file_id):
         return f"Error: {str(e)}", 500
 
 # Handler untuk Vercel
-handler = app
+# @vercel/python akan otomatis mendeteksi variable 'app' sebagai WSGI application
 
 if __name__ == '__main__':
     print("""
