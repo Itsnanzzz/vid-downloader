@@ -97,6 +97,14 @@ temp_files = {}
 def index():
     return render_template('index.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204  # No content
+
+@app.route('/favicon.png')
+def favicon_png():
+    return '', 204  # No content
+
 @app.route('/download', methods=['POST'])
 def download():
     try:
@@ -294,7 +302,9 @@ def get_file(file_id):
         return f"Error: {str(e)}", 500
 
 # Handler untuk Vercel
-# @vercel/python akan otomatis mendeteksi variable 'app' sebagai WSGI application
+# Vercel Python runtime akan otomatis mencari variable 'app' atau 'handler'
+# Pastikan variable app tersedia di level module
+handler = app
 
 if __name__ == '__main__':
     print("""
