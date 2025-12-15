@@ -2,3 +2,6 @@ flask
 flask-cors
 pillow
 werkzeug
+Flask==3.0.0
+yt-dlp==2024.1.7
+Werkzeug==3.0.1
